@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: whitesmoke;
+      }
+      .Card {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4px;
+        padding: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      }
+      .Card:hover {
+        padding: 20px;
+        transition: all 1s;
+      }
+      .name {
+        font-size: large;
+        font-weight: bold;
+      }
+      .rollno {
+        margin-top: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Student!</h1>
+      <div id="StudentCards"></div>
+    </div>
+    <script>
+      var StudentCardsElement = document.getElementById("StudentCards");
+      var Rollno = [23, 34, 45, 66];
+      var Students = [
+        {
+          Name: "Rohit",
+          RollNos: 23
+        },
+        {
+          Name: "Rohan",
+          RollNos: 34
+        },
+        {
+          Name: "Ritik",
+          RollNos: 45
+        }
+      ];
+      var listHTML = " ";
+      for (var i = 0; i < Students.length; i++) {
+        listHTML += `<div class="Card">
+                <div class="name"> ${Students[i].Name}</div>
+               <div class="rollno"> ${Students[i].RollNos}</div>
+                <div class="rollno" ></div>
+               </div>`;
+      }
+      StudentCardsElement.innerHTML = listHTML;
+    </script>
+  </body>
+</html>
